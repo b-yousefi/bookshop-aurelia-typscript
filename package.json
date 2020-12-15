@@ -8,8 +8,12 @@
   },
   "license": "MIT",
   "dependencies": {
+    "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.3.3",
-    "aurelia-animator-css": "^1.0.4"
+    "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -52,7 +56,9 @@
     "aurelia-loader-nodejs": "^1.1.0",
     "aurelia-pal-nodejs": "^2.0.0",
     "ts-jest": "^26.4.1",
-    "@types/jest": "^26.0.14"
+    "@types/jest": "^26.0.14",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3"
   },
   "scripts": {
     "build": "webpack --env.production --extractCss",
