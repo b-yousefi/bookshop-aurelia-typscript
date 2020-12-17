@@ -1,6 +1,7 @@
 <template class="menu sticky-top">
 
   <require from="./menu.scss"></require>
+  <require from="./category-menu-item/category-menu-item"></require>
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Bookshop</a>
@@ -15,11 +16,9 @@
             aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Biographies</a>
-            <a class="dropdown-item" href="#">Romance</a>
-            <a class="dropdown-item" href="#">Self-Help</a>
-          </div>
+
+          <category-menu-item />
+
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Authors</a>
