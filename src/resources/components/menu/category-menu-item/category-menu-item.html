@@ -1,3 +1,13 @@
-<template class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-  <a class="dropdown-item" href="#" repeat.for="category of categories.tree">${category.name}</a>
+<template>
+  <require from="./category-menu-item.scss"></require>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <li class="dropdown-submenu" repeat.for="category of categories.tree">
+      <a class="dropdown-item dropdown-toggle" href="#">${category.name}</a>
+      <ul class="dropdown-menu">
+        <li repeat.for="subCategory of category.subCategories">
+          <a class="dropdown-item" href="#">${subCategory.name}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </template>
