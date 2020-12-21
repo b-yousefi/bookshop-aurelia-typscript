@@ -11,12 +11,12 @@ export class App {
     config.map([
       {
         route: "",
-        moduleId: PLATFORM.moduleName("./resources/routes/books/books"),
+        moduleId: PLATFORM.moduleName("./routes/books/books"),
         title: "Home",
       },
       {
         route: "books",
-        moduleId: PLATFORM.moduleName("./resources/routes/books/books"),
+        moduleId: PLATFORM.moduleName("./routes/books/books"),
         title: "Books",
       },
     ]);
