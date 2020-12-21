@@ -23,3 +23,7 @@ $theme-colors: (
 
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.main-container {
+  padding: 2vw;
+}

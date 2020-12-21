@@ -1,0 +1,23 @@
+<template class="container">
+  <require from="./books.scss"></require>
+  <div class="row">
+    <div
+      repeat.for="book of books.arr"
+      class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch"
+    >
+      <div class="card mb-3">
+        <img
+          class="card-img-top"
+          src="data:image/jpeg;base64,${book.picture.data}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="book-title">${book.name}</h5>
+        </div>
+        <div class="card-footer bg-transparent">
+          <p class="card-text">Price: $${book.price}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
