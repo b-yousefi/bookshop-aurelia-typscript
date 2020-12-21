@@ -1,0 +1,21 @@
+<template>
+  <ul class="pagination justify-content-center">
+    <li class="page-item"></li>
+    <li class="page-item ${page.pageNumber === 0 ? 'disabled' : ''}">
+      <a class="page-link" click.delegate="onPreviousClicked()" href="#">
+        Previous
+      </a>
+    </li>
+    <li
+      repeat.for="i of page.totalPages"
+      class="page-item ${page.pageNumber === i ? 'active' : ''}"
+    >
+      <a class="page-link" click.delegate="onclick(i)">${i+ 1}</a>
+    </li>
+    <li
+      class="page-item ${page.pageNumber === page.totalPages - 1 ? 'disabled' : ''}"
+    >
+      <a class="page-link" click.delegate="onNextClicked()" href="#">Next</a>
+    </li>
+  </ul>
+</template>

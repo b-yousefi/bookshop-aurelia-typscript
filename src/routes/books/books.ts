@@ -18,4 +18,16 @@ export class Books {
       doRefresh: true,
     });
   }
+
+  onPageChanged = (page: number): void => {
+    fetchFilteredBooks(
+      {
+        categories: [],
+        authors: [],
+        publications: [],
+        doRefresh: true,
+      },
+      page
+    );
+  };
 }

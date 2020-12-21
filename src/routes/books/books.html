@@ -20,4 +20,7 @@
       </div>
     </div>
   </div>
+  <section if.bind="books.pageInfo.totalPages > 0">
+    <pagination page.bind="books.pageInfo" onclick.bind="onPageChanged" />
+  </section>
 </template>

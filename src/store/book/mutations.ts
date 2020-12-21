@@ -28,7 +28,7 @@ const fetchFilteredBooks = async (
     )}` +
     `&categoryIds=${filter.categories.map((f) => f.id)}` +
     `&authorIds=${filter.authors.map((f) => f.id)}` +
-    `&page=${page - 1}&size=${PAGE_SIZE}`;
+    `&page=${page}&size=${PAGE_SIZE}`;
 
   const response = await fetch(url, {
     method: "GET",
@@ -45,7 +45,7 @@ const fetchFilteredBooks = async (
 
   const newState: State = {
     ...state,
-    books: { arr: fetchedBooks, currentFilter: filter },
+    books: { arr: fetchedBooks, currentFilter: filter, pageInfo },
   };
   return newState;
 };
