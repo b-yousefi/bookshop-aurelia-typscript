@@ -16,8 +16,15 @@ export class App {
       },
       {
         route: "books",
+        name: "books",
         moduleId: PLATFORM.moduleName("./routes/books/books"),
         title: "Books",
+      },
+      {
+        route: "authors",
+        name: "authors",
+        moduleId: PLATFORM.moduleName("./routes/authors/authors"),
+        title: "Authors",
       },
     ]);
 
