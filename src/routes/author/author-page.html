@@ -1,17 +1,26 @@
 <template>
-  <require from="./author-page.scss"></require>
-  <div class="card mb-3">
-    <img
-      class="card-img"
-      src="data:image/jpeg;base64,${author.picture.data}"
-      alt="author.fullName"
-    />
-    <div class="card-body">
-      <h5 class="author-title">${author.fullName}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">
-        ${author.readableBirthdayDate}
-      </h6>
-      <p>${author.description}</p>
+  <require from="../books/books"></require>
+  <div class="card">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 d-flex align-items-stretch">
+        <img
+          class="card-img"
+          src="data:image/jpeg;base64,${author.picture.data}"
+          alt="author.fullName"
+        />
+      </div>
+      <div class="col-lg-9 col-md-8">
+        <div class="card-body">
+          <h5 class="author-title">${author.fullName}</h5>
+          <h6 class="card-subtitle text-muted">
+            ${author.readableBirthdayDate}
+          </h6>
+          <p>${author.description}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row p-3">
+      <books />
     </div>
   </div>
 </template>
