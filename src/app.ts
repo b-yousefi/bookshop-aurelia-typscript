@@ -26,6 +26,11 @@ export class App {
         moduleId: PLATFORM.moduleName("./routes/authors/authors"),
         title: "Authors",
       },
+      {
+        name: "author",
+        route: "authors/:id",
+        moduleId: PLATFORM.moduleName("./routes/author/author-page"),
+      },
     ]);
 
     this.router = router;
