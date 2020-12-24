@@ -1,6 +1,8 @@
 import { connectTo } from "aurelia-store";
+import { Author } from "models/Author";
 import { pluck } from "rxjs/operators";
 import { AuthorState } from "store/author/state";
+import { selectAuthor } from "store/filter/actions";
 import { fetchAuthors } from "../../store/author/actions";
 
 @connectTo<AuthorState>({
@@ -12,5 +14,9 @@ export class Authors {
 
   bind(): void {
     fetchAuthors();
+  }
+
+  select(author: Author) {
+    selectAuthor(author);
   }
 }
