@@ -1,7 +1,10 @@
 <template>
   <ul class="pagination justify-content-center">
     <li class="page-item"></li>
-    <li class="page-item ${page.pageNumber === 0 ? 'disabled' : ''}">
+    <li
+      if.bind="page.totalPages > 1"
+      class="page-item ${page.pageNumber === 0 ? 'disabled' : ''}"
+    >
       <a class="page-link" click.delegate="onPreviousClicked()" href="#">
         Previous
       </a>
@@ -13,6 +16,7 @@
       <a class="page-link" click.delegate="onclick(i)">${i+ 1}</a>
     </li>
     <li
+      if.bind="page.totalPages > 1"
       class="page-item ${page.pageNumber === page.totalPages - 1 ? 'disabled' : ''}"
     >
       <a class="page-link" click.delegate="onNextClicked()" href="#">Next</a>
