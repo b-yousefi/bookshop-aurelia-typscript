@@ -1,5 +1,6 @@
 import { Author } from "models/Author";
 import { FilterItem } from "models/BooksFilter";
+import { Publication } from "models/Publication";
 import store from "store/store";
 import State from "../state";
 
@@ -24,6 +25,28 @@ const selectAuthor = (state: State, author: Author): State => {
   return newState;
 };
 
-store.registerAction("selectAuthor", selectAuthor);
+const selectPublication = (state: State, publication: Publication): State => {
+  const selectedPublicationFilter: FilterItem = {
+    id: publication.id,
+    name: publication.name,
+  };
 
-export { selectAuthor };
+  const newState: State = {
+    ...state,
+    filter: {
+      ...state.filter,
+      currentFilter: {
+        ...state.filter.currentFilter,
+        publications: [selectedPublicationFilter],
+        doRefresh: true,
+      },
+    },
+  };
+
+  return newState;
+};
+
+store.registerAction("selectAuthor", selectAuthor);
+store.registerAction("selectPublication", selectPublication);
+
+export { selectAuthor, selectPublication };
