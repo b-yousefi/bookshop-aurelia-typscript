@@ -11,14 +11,9 @@ export class App {
     config.map([
       {
         route: "",
-        moduleId: PLATFORM.moduleName("./routes/books/books"),
+        name: "home",
+        moduleId: PLATFORM.moduleName("./routes/home/home"),
         title: "Home",
-      },
-      {
-        route: "books",
-        name: "books",
-        moduleId: PLATFORM.moduleName("./routes/books/books"),
-        title: "Books",
       },
       {
         route: "authors",

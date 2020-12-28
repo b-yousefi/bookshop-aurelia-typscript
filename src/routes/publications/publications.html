@@ -1,20 +1,22 @@
 <template>
-  <div class="card mb-3" repeat.for="publication of publications.arr">
-    <div class="row">
-      <div class="col-12">
-        <div class="card-body">
-          <a class="card-title" href="${publication.website}">
-            <i class="fa fa-link"></i>
-            <span>${publication.name}</span>
-          </a>
-          <p>${publication.description}</p>
-          <a
-            class="card-link"
-            mousedown.trigger="$parent.select(publication)"
-            route-href="route: books"
-          >
-            Books
-          </a>
+  <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+    <div class="card mb-3" repeat.for="publication of publications.arr">
+      <div class="row">
+        <div class="col-12">
+          <div class="card-body">
+            <a class="card-title" href="${publication.website}">
+              <i class="fa fa-link"></i>
+              <span>${publication.name}</span>
+            </a>
+            <p>${publication.description}</p>
+            <a
+              class="card-link"
+              mousedown.trigger="$parent.select(publication)"
+              route-href="route: books"
+            >
+              Books
+            </a>
+          </div>
         </div>
       </div>
     </div>

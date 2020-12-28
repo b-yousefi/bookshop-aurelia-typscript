@@ -1,34 +1,37 @@
 <template>
   <require from="./authors.scss"></require>
-  <div class="row">
-    <div
-      repeat.for="author of authors.arr"
-      class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch"
-    >
-      <div class="card mb-3" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="data:image/jpeg;base64,${author.picture.data}"
-          alt="author.fullName"
-        />
-        <div class="card-body">
-          <h5 class="author-title">${author.fullName}</h5>
-          <div class="d-flex align-items-end">
-            <h6 class="card-subtitle mb-2 text-muted">
-              ${author.readableBirthdayDate}
-            </h6>
+  <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+    <div class="row">
+      <div
+        repeat.for="author of authors.arr"
+        class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch  justify-content-center"
+      >
+        <div class="card mb-3" style="width: 18rem">
+          <img
+            class="card-img-top"
+            src="data:image/jpeg;base64,${author.picture.data}"
+            alt="author.fullName"
+          />
+          <div class="card-body">
+            <h5 class="author-title">${author.fullName}</h5>
+            <div class="d-flex align-items-end">
+              <h6 class="card-subtitle mb-2 text-muted">
+                ${author.readableBirthdayDate}
+              </h6>
+            </div>
           </div>
-        </div>
-        <div class="card-footer">
-          <a
-            class="card-link"
-            mousedown.trigger="$parent.select(author)"
-            route-href="route: author; params.bind: {id:author.id}"
-          >
-            More details
-          </a>
+          <div class="card-footer">
+            <a
+              class="card-link"
+              mousedown.trigger="$parent.select(author)"
+              route-href="route: author; params.bind: {id:author.id}"
+            >
+              More details
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </template>
