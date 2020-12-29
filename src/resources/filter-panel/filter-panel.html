@@ -50,7 +50,7 @@
             Category:
             <select multiple value.bind="selectedCategories" class="full-width" change.delegate="onSelectCategory()">
               <option
-                repeat.for="category of categories.tree"
+                repeat.for="category of categories.arr"
                 model.bind="category"
               >
                 ${category.name}
