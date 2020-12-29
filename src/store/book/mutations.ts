@@ -38,7 +38,9 @@ const fetchFilteredBooks = async (
   });
   const jsonObject = await response.json();
 
-  const fetchedBooks: Book[] = jsonObject._embedded.books;
+  const fetchedBooks: Book[] = jsonObject?._embedded
+    ? jsonObject._embedded.books
+    : [];
 
   const pageInfo: PageInfo = jsonObject.page;
   pageInfo.pageNumber = jsonObject.page.number;
