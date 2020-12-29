@@ -4,6 +4,7 @@ import Category from "models/Category";
 import { Publication } from "models/Publication";
 import store from "store/store";
 import State from "../state";
+import { filterInitialState } from "./state";
 
 const selectAuthor = (state: State, author: Author): State => {
   return selectAuthors(state, [author]);
@@ -91,12 +92,22 @@ const selectCategories = (state: State, categories: Category[]): State => {
   return newState;
 };
 
+const clearFilter = (state: State): State => {
+  const newState: State = {
+    ...state,
+    filter: filterInitialState,
+  };
+
+  return newState;
+};
+
 store.registerAction("selectAuthor", selectAuthor);
 store.registerAction("selectAuthors", selectAuthors);
 store.registerAction("selectPublication", selectPublication);
 store.registerAction("selectPublications", selectPublications);
 store.registerAction("selectCategory", selectCategory);
 store.registerAction("selectCategories", selectCategories);
+store.registerAction("clearFilter", clearFilter);
 
 export {
   selectAuthor,
@@ -105,4 +116,5 @@ export {
   selectPublications,
   selectCategory,
   selectCategories,
+  clearFilter,
 };

@@ -29,6 +29,10 @@ function selectCategories(categories: Category[]): void {
   store.dispatch(Mutations.selectCategories, categories);
 }
 
+function clearFilter(): void {
+  store.dispatch(Mutations.clearFilter);
+}
+
 export {
   selectAuthor,
   selectAuthors,
@@ -36,4 +40,5 @@ export {
   selectPublications,
   selectCategory,
   selectCategories,
+  clearFilter,
 };

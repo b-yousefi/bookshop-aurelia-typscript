@@ -7,6 +7,7 @@ import { fetchAuthors } from "store/author/actions";
 import { AuthorState } from "store/author/state";
 import { CategoryState } from "store/category/state";
 import {
+  clearFilter,
   selectAuthors,
   selectCategories,
   selectPublications,
@@ -49,5 +50,12 @@ export class FilterPanel {
 
   onSelectCategory(): void {
     selectCategories(this.selectedCategories);
+  }
+
+  onClearFilterClicke(): void {
+    clearFilter();
+    this.selectedAuthors = [];
+    this.selectedCategories = [];
+    this.selectedPublications = [];
   }
 }

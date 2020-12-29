@@ -4,44 +4,32 @@
   <div id="accordion">
     <div class="card">
       <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button
-            class="btn btn-link"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            Filters
-          </button>
+        <h5 class="mb-0 d-flex  flex-row justify-content-between">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
+              Filters
+            </button>
+            <button class="btn" click.delegate="onClearFilterClicke()">
+              <i class="fa fa-remove"></i>
+            </button>
         </h5>
       </div>
 
-      <div
-        id="collapseOne"
-        class="collapse show"
-        aria-labelledby="headingOne"
-        data-parent="#accordion"
-      >
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
-          <label  class="full-width">
+          <label class="full-width">
             Publication:
-            <select multiple value.bind="selectedPublications" class="full-width" change.delegate="onSelectPublication()">
-              <option
-                repeat.for="publication of publications.arr"
-                model.bind="publication"
-              >
+            <select multiple value.bind="selectedPublications" class="full-width"
+              change.delegate="onSelectPublication()">
+              <option repeat.for="publication of publications.arr" model.bind="publication">
                 ${publication.name}
               </option>
             </select>
           </label>
-          <label  class="full-width">
+          <label class="full-width">
             Authors:
             <select multiple value.bind="selectedAuthors" class="full-width" change.delegate="onSelectAuthor()">
-              <option
-                repeat.for="author of authors.arr"
-                model.bind="author"
-              >
+              <option repeat.for="author of authors.arr" model.bind="author">
                 ${author.fullName}
               </option>
             </select>
@@ -49,15 +37,12 @@
           <label class="full-width">
             Category:
             <select multiple value.bind="selectedCategories" class="full-width" change.delegate="onSelectCategory()">
-              <option
-                repeat.for="category of categories.arr"
-                model.bind="category"
-              >
+              <option repeat.for="category of categories.arr" model.bind="category">
                 ${category.name}
               </option>
             </select>
           </label>
+        </div>
       </div>
     </div>
-  </div>
 </template>
