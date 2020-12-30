@@ -32,6 +32,16 @@ const loginUser = async (
   return newState;
 };
 
-store.registerAction("loginUser", loginUser);
+const logoutUser = async (state: State): Promise<State> => {
+  const newState: State = {
+    ...state,
+    user: { ...userInitialState, isLoggedIn: false, token: "" },
+  };
 
-export { loginUser };
+  return newState;
+};
+
+store.registerAction("loginUser", loginUser);
+store.registerAction("logoutUser", logoutUser);
+
+export { loginUser, logoutUser };

@@ -54,7 +54,17 @@
         </li>
       </ul>
       <div class="nav-item my-2 my-lg-0">
-        <a class="nav-link" route-href="route: login"> Login </a>
+        <a if.bind="!loggedIn" class="nav-link" route-href="route: login">
+          Login
+        </a>
+        <a
+          if.bind="loggedIn"
+          class="nav-link"
+          route-href="route: home"
+          mousedown.trigger="logout()"
+        >
+          Logout
+        </a>
       </div>
     </div>
   </nav>
