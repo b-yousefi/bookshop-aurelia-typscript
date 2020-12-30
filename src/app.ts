@@ -10,7 +10,7 @@ export class App {
     config.options.root = "/";
     config.map([
       {
-        route: "",
+        route: "home",
         name: "home",
         moduleId: PLATFORM.moduleName("./routes/home/home"),
         title: "Home",
@@ -31,6 +31,12 @@ export class App {
         route: "publications",
         moduleId: PLATFORM.moduleName("./routes/publications/publications"),
         title: "Publications",
+      },
+      {
+        name: "login",
+        route: "login",
+        moduleId: PLATFORM.moduleName("./routes/login/login"),
+        title: "Login",
       },
     ]);
 
