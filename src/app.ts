@@ -38,6 +38,12 @@ export class App {
         moduleId: PLATFORM.moduleName("./routes/login/login"),
         title: "Login",
       },
+      {
+        name: "register",
+        route: "register",
+        moduleId: PLATFORM.moduleName("./routes/register/register"),
+        title: "Register",
+      },
     ]);
 
     this.router = router;

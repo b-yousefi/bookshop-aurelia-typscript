@@ -1,0 +1,68 @@
+<template>
+  <form submit.trigger="register()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        required
+        class="form-control"
+        id="username"
+        placeholder="Username"
+        value.bind="user.username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input
+        required
+        class="form-control"
+        id="firstname"
+        placeholder="First Name"
+        value.bind="user.firstName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input
+        required
+        class="form-control"
+        id="lastname"
+        placeholder="Last Name"
+        value.bind="user.lastName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        required
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        value.bind="user.email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input
+        required
+        type="tel"
+        class="form-control"
+        id="phoneNumber"
+        placeholder="Phone Number"
+        value.bind="user.phoneNumber"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        required
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+        value.bind="user.password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form></template
+>

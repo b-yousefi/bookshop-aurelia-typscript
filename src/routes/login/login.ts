@@ -20,4 +20,8 @@ export class Login {
       console.log(error.message);
     }
   }
+
+  register() {
+    this.router.navigate("register");
+  }
 }
