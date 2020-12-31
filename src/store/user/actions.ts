@@ -15,4 +15,8 @@ function registerUser(user: User): void {
   store.dispatch(Mutations.registerUser, user);
 }
 
-export { loginUser, logoutUser, registerUser };
+function fetchUser(username: string): void {
+  store.dispatch(Mutations.fetchUser, username);
+}
+
+export { loginUser, logoutUser, registerUser, fetchUser };

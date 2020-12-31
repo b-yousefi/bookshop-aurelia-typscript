@@ -4,6 +4,8 @@ import store from "store/store";
 import { userInitialState } from "./state";
 import { User } from "models/User";
 
+const USER_URL = `${environment.API_URL}/users`;
+
 const loginUser = async (
   state: State,
   username: string,
@@ -60,8 +62,30 @@ const registerUser = async (state: State, user: User): Promise<State> => {
   return state;
 };
 
+const fetchUser = async (state: State, username: string): Promise<State> => {
+  const url = `${USER_URL}/search/findUser?username=${username}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: state.user.token,
+    },
+  });
+
+  const fetchedUser: User = await response.json();
+
+  const newState: State = {
+    ...state,
+    user: { ...state.user, user: fetchedUser },
+  };
+
+  return newState;
+};
+
 store.registerAction("loginUser", loginUser);
 store.registerAction("logoutUser", logoutUser);
 store.registerAction("registerUser", registerUser);
+store.registerAction("fetchUser", fetchUser);
 
-export { loginUser, logoutUser, registerUser };
+export { loginUser, logoutUser, registerUser, fetchUser };

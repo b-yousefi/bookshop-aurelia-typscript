@@ -1,6 +1,6 @@
 import { inject } from "aurelia-framework";
 import { Router } from "aurelia-router";
-import { loginUser } from "store/user/actions";
+import { fetchUser, loginUser } from "store/user/actions";
 
 @inject(Router)
 export class Login {
@@ -15,6 +15,7 @@ export class Login {
   async login(): Promise<void> {
     try {
       await loginUser(this.username, this.password);
+      fetchUser(this.username);
       this.router.navigate("home");
     } catch (error) {
       console.log(error.message);
