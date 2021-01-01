@@ -1,8 +1,20 @@
 import { Router, RouterConfiguration } from "aurelia-router";
 import { PLATFORM } from "aurelia-pal";
+import store from "store/store";
+import { localStorageMiddleware, MiddlewarePlacement } from "aurelia-store";
 
 export class App {
   router: Router;
+
+  constructor() {
+    store.registerMiddleware(
+      localStorageMiddleware,
+      MiddlewarePlacement.After,
+      {
+        key: "bookshop-storage-key",
+      }
+    );
+  }
 
   configureRouter(config: RouterConfiguration, router: Router): void {
     config.title = "Bookshop";
