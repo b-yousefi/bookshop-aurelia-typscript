@@ -4,6 +4,7 @@ import { BookState, bookInitialState } from "./book/state";
 import { CategoryState, categoryInitialState } from "./category/state";
 import { filterInitialState, FilterState } from "./filter/state";
 import { publicationInitialState, PublicationState } from "./publication/state";
+import { cartInitialState, ShoppingCartState } from "./shoppingCart/state";
 import store from "./store";
 import { userInitialState, UserState } from "./user/state";
 
@@ -14,6 +15,7 @@ export default interface State {
   publications: PublicationState;
   filter: FilterState;
   user: UserState;
+  shoppingCart: ShoppingCartState;
 }
 
 export const initialState: State = {
@@ -23,6 +25,7 @@ export const initialState: State = {
   publications: publicationInitialState,
   filter: filterInitialState,
   user: userInitialState,
+  shoppingCart: cartInitialState,
 };
 
 store.registerAction("Rehydrate", rehydrateFromLocalStorage);

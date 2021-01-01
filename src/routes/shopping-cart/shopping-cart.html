@@ -1,0 +1,53 @@
+<template>
+  <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+    <div class="list-group">
+      <a
+        repeat.for="orderItem of shoppingCart.cart.orderItems"
+        href="#"
+        class="list-group-item list-group-item-action flex-column align-items-start"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-5">
+              <img
+                class="card-img"
+                src="data:image/jpeg;base64,${orderItem.book.picture.data}"
+                alt="orderItem.book.name"
+              />
+            </div>
+            <div class="col-lg col-md col-sm col-xs">
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="mb-1">${orderItem.book.name}</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 align-self-center">
+                  Price:$${orderItem.book.price}
+                </div>
+                <div class="col-md-6 align-self-center">
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="quantity">Quantity</label>
+                      <input
+                        type="number"
+                        class="form-control mx-sm-3 w-25"
+                        id="quantity"
+                        value.bind="orderItem.quantity"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1 m-1 align-self-center">
+              <button class="btn" click.delegate="onDeleteClicked()">
+                <i class="fa fa-trash fa-2x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</template>
