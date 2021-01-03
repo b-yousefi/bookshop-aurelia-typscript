@@ -3,6 +3,9 @@ import environment from "../../environment";
 import store from "store/store";
 import { userInitialState } from "./state";
 import { User } from "models/User";
+import { plainToClass } from "class-transformer";
+import { Order } from "models/Order";
+import { cartInitialState } from "store/shoppingCart/state";
 
 const USER_URL = `${environment.API_URL}/users`;
 
@@ -73,11 +76,19 @@ const fetchUser = async (state: State, username: string): Promise<State> => {
     },
   });
 
-  const fetchedUser: User = await response.json();
+  const fetchedResponse = await response.json();
+
+  const fetchedUser: User = fetchedResponse;
+
+  const userShoppingCart: Order = plainToClass(
+    Order,
+    fetchedResponse.openOrder
+  );
 
   const newState: State = {
     ...state,
     user: { ...state.user, user: fetchedUser },
+    shoppingCart: { ...cartInitialState, cart: userShoppingCart },
   };
 
   return newState;

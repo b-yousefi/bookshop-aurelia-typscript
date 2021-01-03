@@ -22,6 +22,11 @@ export class App {
     config.options.root = "/";
     config.map([
       {
+        route: "/",
+        moduleId: PLATFORM.moduleName("./routes/home/home"),
+        title: "Home",
+      },
+      {
         route: "home",
         name: "home",
         moduleId: PLATFORM.moduleName("./routes/home/home"),

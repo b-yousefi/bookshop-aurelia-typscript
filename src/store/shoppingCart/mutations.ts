@@ -22,7 +22,7 @@ const fetchShoppingCart = async (state: State): Promise<State> => {
   });
   const fetched: Order = await response.json();
 
-  const fetchedCart: Order = plainToClass(Order, fetched as Order);
+  const fetchedCart: Order = plainToClass(Order, fetched);
 
   const newState: State = {
     ...state,

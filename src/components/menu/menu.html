@@ -53,25 +53,29 @@
           <a class="nav-link" href="#">About</a>
         </li>
       </ul>
-      <div class="nav-item my-2 my-lg-0">
-        <a if.bind="!loggedIn" class="nav-link" route-href="route: login">
-          Login
-        </a>
-        <a
-          if.bind="loggedIn"
-          class="nav-link"
-          route-href="route: home"
-          mousedown.trigger="logout()"
-        >
-          Logout
-        </a>
-        <a
-          if.bind="loggedIn"
-          class="nav-link"
-          route-href="route: shopping-cart"
-        >
-          Shopping Cart
-        </a>
+      <div class="nav-item mx-2">
+        <div class="row navbar-nav">
+          <div class="d-flex flex-row bd-highlight">
+            <a
+              if.bind="loggedIn"
+              class="nav-link"
+              route-href="route: shopping-cart"
+            >
+              Shopping Cart
+            </a>
+            <a if.bind="!loggedIn" class="nav-link" route-href="route: login">
+              Login
+            </a>
+            <a
+              if.bind="loggedIn"
+              class="nav-link"
+              route-href="route: home"
+              mousedown.trigger="logout()"
+            >
+              Logout
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
