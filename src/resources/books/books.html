@@ -15,7 +15,20 @@
           <h5 class="book-title">${book.name}</h5>
         </div>
         <div class="card-footer bg-transparent">
-          <p class="card-text">Price: $${book.price}</p>
+          <div class="row">
+            <div class="col-lg-8 align-self-center">
+              <p class="card-text">Price: $${book.price}</p>
+            </div>
+            <div if.bind="user.isLoggedIn" class="col-lg-4 align-self-center">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                click.delegate="onAddClicked(book)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
