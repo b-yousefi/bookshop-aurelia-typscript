@@ -67,6 +67,11 @@ export class App {
         moduleId: PLATFORM.moduleName("./routes/shopping-cart/shopping-cart"),
         title: "Shopping Cart",
       },
+      {
+        name: "category",
+        route: "categories/:id",
+        moduleId: PLATFORM.moduleName("./routes/category/category-page"),
+      },
     ]);
 
     this.router = router;

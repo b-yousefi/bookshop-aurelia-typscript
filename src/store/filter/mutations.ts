@@ -7,7 +7,18 @@ import State from "../state";
 import { filterInitialState } from "./state";
 
 const selectAuthor = (state: State, author: Author): State => {
-  return selectAuthors(state, [author]);
+  const filter = { ...filterInitialState };
+  filter.currentFilter.authors = [
+    {
+      id: author.id,
+      name: author.fullName,
+    },
+  ];
+  const newState: State = {
+    ...state,
+    filter: filter,
+  };
+  return newState;
 };
 
 const selectAuthors = (state: State, authors: Author[]): State => {
@@ -34,7 +45,18 @@ const selectAuthors = (state: State, authors: Author[]): State => {
 };
 
 const selectPublication = (state: State, publication: Publication): State => {
-  return selectPublications(state, [publication]);
+  const filter = { ...filterInitialState };
+  filter.currentFilter.publications = [
+    {
+      id: publication.id,
+      name: publication.name,
+    },
+  ];
+  const newState: State = {
+    ...state,
+    filter: filter,
+  };
+  return newState;
 };
 
 const selectPublications = (
@@ -66,7 +88,19 @@ const selectPublications = (
 };
 
 const selectCategory = (state: State, category: Category): State => {
-  return selectCategories(state, [category]);
+  const filter = { ...filterInitialState };
+  filter.currentFilter.categories = [
+    {
+      id: category.id,
+      name: category.name,
+    },
+  ];
+  const newState: State = {
+    ...state,
+    filter: filter,
+  };
+
+  return newState;
 };
 
 const selectCategories = (state: State, categories: Category[]): State => {

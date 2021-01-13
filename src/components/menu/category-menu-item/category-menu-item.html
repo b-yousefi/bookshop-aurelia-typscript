@@ -2,10 +2,20 @@
   <require from="./category-menu-item.scss"></require>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
     <li class="dropdown-submenu" repeat.for="category of categories.tree">
-      <a class="dropdown-item dropdown-toggle" href="#">${category.name}</a>
+      <a
+        class="dropdown-item dropdown-toggle"
+        mousedown.trigger="select(category)"
+        route-href="route: category; params.bind: {id:category.id}"
+        >${category.name}</a
+      >
       <ul class="dropdown-menu">
         <li repeat.for="subCategory of category.subCategories">
-          <a class="dropdown-item" href="#">${subCategory.name}</a>
+          <a
+            class="dropdown-item"
+            mousedown.trigger="select(subCategory)"
+            route-href="route: category; params.bind: {id:subCategory.id}"
+            >${subCategory.name}</a
+          >
         </li>
       </ul>
     </li>
